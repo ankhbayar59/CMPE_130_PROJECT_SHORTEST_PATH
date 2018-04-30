@@ -33,7 +33,7 @@ int main()
 
 	}
 
-	cout << vertex_begin << " " << DB.city_number;
+	//cout << vertex_begin << " " << DB.city_number;
 
 
 	DB._EXPLORE_MATRIX(vertex_begin);
