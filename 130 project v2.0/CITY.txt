@@ -1,0 +1,15 @@
+San_Franciso
+Daly_City
+South_San_Francisco
+San_Mateo
+Redwood_City
+Palo_Alto
+Mountain_View
+San_Jose
+Milpitas
+Fremont
+Union_City
+Hayward
+San_Leandro
+Alameda
+Oakland
