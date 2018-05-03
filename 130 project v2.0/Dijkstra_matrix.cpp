@@ -4,6 +4,9 @@
 #include <fstream>
 dijkstra::dijkstra()
 {
+	
+	
+	// testing // 
 	//I initiate the matrix all the plots as infinite
 	for (int i = 0; i <= city_number; i++)
 		for (int j = 0; j <= city_number; j++)
