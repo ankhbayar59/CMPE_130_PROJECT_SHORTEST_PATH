@@ -14,7 +14,7 @@ dijkstra::dijkstra()
 	}
 
 }
-void dijkstra::_LOAD_DATA_(char *filename)
+void dijkstra::_LOAD_DATA_(string fileName)
 {
 	//based on the each city's distance to another city which read from file, 
 	//I put the distance (undriect graph it means that distance_matrix[i][j] = distance_matrix[j][i])
@@ -26,8 +26,7 @@ void dijkstra::_LOAD_DATA_(char *filename)
 	int city_end;
 	int weight;
 	ifstream inFile;
-	string text = filename;
-	inFile.open(text);
+	inFile.open(fileName);
 	if (inFile.fail())
 	{
 	 	cout << "Cannot find the file" << endl;
