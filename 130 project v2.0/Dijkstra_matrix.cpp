@@ -200,6 +200,6 @@ void dijkstra::_SHOW_COST_()
 	double bus_cost_money = track_distance[end_city] * 0.15;
 	double bus_cost_time = track_distance[end_city] / 30 * 60.00;
 	cout << "The total length is: " << track_distance[end_city] << std::endl;
-	cout << "Car use: \n$" << car_cost_money << " Time: " << car_cost_time << endl;
-	cout << "Bus use: \n$" << bus_cost_money << " Time: " << bus_cost_time << endl;
+	cout << "Car use: \n" << "Financial Cost: $" << car_cost_money << " Time: " << car_cost_time << endl;
+	cout << "Bus use: \n" << "Financial Cost: $" << bus_cost_money << " Time: " << bus_cost_time << endl;
 }
