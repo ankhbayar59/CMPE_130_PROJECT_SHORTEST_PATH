@@ -138,21 +138,48 @@ void dijkstra::_PRINT_PATH_(int start_vertex, int end_vertex)
 	}
 
 }
-void dijkstra::_LOAD_CITY_STRING_(std::string filename)
+void dijkstra::_LOAD_CITY_STRING_(string cityFileName)
 {
-	std::ifstream in;
-	std::string str;
+	ifstream in;
+	in.open(fileName);
+	string str;
+	string city;
+	string citySecond = "";
+	city_name_stream.push_back("dummy");
+	if (in.fail())
+	{
+		cout << "Cannot find the file" << endl;
+	}
+	while(!in.eof())
+	{
+		getline(in, str);
+		stringstream(str) >> city >> citySecond;
+		if (citySecond == "")
+		{
+			city_name_stream.push_back(city);
+		}
+		else
+		{
+			city = city + " " + citySecond; 
+			city_name_stream.push_back(city);
+		}
+		city = "";
+		citySecond = "";
+	}
+	/*
+	string str;
 	in.open(filename);
 	in >> str;
-	std::string city_name;
+	string city_name;
 	city_name_stream.push_back("dummy");
 	while (in)
 	{
-		std::stringstream(str) >> city_name;
+		stringstream(str) >> city_name;
 
 		city_name_stream.push_back(city_name);
 		in >> str;
 	}
+	*/
 
 }
 void dijkstra::_SHOW_COST_()
@@ -164,7 +191,7 @@ void dijkstra::_SHOW_COST_()
 
 	double bus_cost_money = track_distance[end_city] * 0.15;
 	double bus_cost_time = track_distance[end_city] / 30 * 60.00;
-	std::cout << "The total length is: " << track_distance[end_city] << std::endl;
-	std::cout << "Car use: \n$" << car_cost_money << " Time: " << car_cost_time << std::endl;
-	std::cout << "Bus use: \n$" << bus_cost_money << " Time: " << bus_cost_time << std::endl;
+	cout << "The total length is: " << track_distance[end_city] << std::endl;
+	cout << "Car use: \n$" << car_cost_money << " Time: " << car_cost_time << endl;
+	cout << "Bus use: \n$" << bus_cost_money << " Time: " << bus_cost_time << endl;
 }
