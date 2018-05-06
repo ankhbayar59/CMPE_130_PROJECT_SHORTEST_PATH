@@ -10,7 +10,7 @@ class dijkstra
 {
 public:
 	dijkstra();
-	void _LOAD_DATA_(char *filename);
+	void _LOAD_DATA_(string filename);
 	void _LOAD_CITY_STRING_(std::string filename);
 	void _EXPLORE_MATRIX_(int start_vertex);
 	void _PRINT_PATH_(int start_vertex, int end_vertex);
