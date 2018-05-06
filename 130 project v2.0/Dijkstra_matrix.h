@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 const int INFINITE = 999999;
-const int LINE_NUMBER = 17;
 const int cities = 200;
 class dijkstra
 {
@@ -20,7 +19,7 @@ public:
 	int distance_matrix[cities][cities];
 	double track_distance[cities];
 	int prev[cities];
-	int line_number = LINE_NUMBER;
+	int line_number;
 	int city_number = 15;
 	int path_list[cities];
 	std::vector<std::string> city_name_stream;
