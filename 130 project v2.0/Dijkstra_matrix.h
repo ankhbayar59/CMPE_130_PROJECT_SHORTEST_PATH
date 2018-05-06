@@ -6,12 +6,13 @@
 #include <vector>
 const int INFINITE = 999999;
 const int cities = 200;
+using namespace std;
 class dijkstra
 {
 public:
 	dijkstra();
-	void _LOAD_DATA_(string filename);
-	void _LOAD_CITY_STRING_(std::string filename);
+	void _LOAD_DATA_(string fileName);
+	void _LOAD_CITY_STRING_(string cityFileName);
 	void _EXPLORE_MATRIX_(int start_vertex);
 	void _PRINT_PATH_(int start_vertex, int end_vertex);
 	void _SHOW_COST_();
@@ -22,9 +23,9 @@ public:
 	int line_number;
 	int city_number = 15;
 	int path_list[cities];
-	std::vector<std::string> city_name_stream;
+	vector<string> city_name_stream;
 	int end_city;
-	std::string start;
-	std:: string end;
+	string start;
+	string end;
 };
 #endif // ! DIJKSTRA_H
