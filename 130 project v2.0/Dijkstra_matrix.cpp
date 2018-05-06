@@ -19,16 +19,38 @@ void dijkstra::_LOAD_DATA_(char *filename)
 	//based on the each city's distance to another city which read from file, 
 	//I put the distance (undriect graph it means that distance_matrix[i][j] = distance_matrix[j][i])
 	// to the distance_matrix (2d vector
-	freopen(filename, "r", stdin);
+	// freopen(filename, "r", stdin);
+	int tempNum = 0;
+	string line; 
 	int city_start;
 	int city_end;
 	int weight;
+	ifstream inFile;
+	string text = filename;
+	inFile.open(text);
+	if (inFile.fail())
+	{
+	 	cout << "Cannot find the file" << endl;
+	}
+	while(!inFile.eof())
+	{
+		getline(inFile, line);
+		stringstream(line) >> city_start >> city_end >> weight;
+		tempNum++;
+		distance_matrix[city_start][city_end] = weight;
+		distance_matrix[city_end][city_start] = weight;
+		
+	}
+	line_number = tempNum;
+	/*
 	for (int i = 0; i <= line_number; i++)
 	{
 		std::cin >> city_start >> city_end >> weight;
 		distance_matrix[city_start][city_end] = weight;
 		distance_matrix[city_end][city_start] = weight;
+		
 	}
+	*/
 
 	//show the matrix to check whether it is correct
 	/*for (int i = 0; i <= city_number; i++)
