@@ -1,15 +1,15 @@
-San_Franciso
-Daly_City
-South_San_Francisco
-San_Mateo
-Redwood_City
-Palo_Alto
-Mountain_View
-San_Jose
+San Franciso
+Daly City
+Concord
+San Mateo
+Redwood City
+Palo Alto
+Mountain View
+San Jose
 Milpitas
 Fremont
-Union_City
+Union City
 Hayward
-San_Leandro
+San Leandro
 Alameda
 Oakland
