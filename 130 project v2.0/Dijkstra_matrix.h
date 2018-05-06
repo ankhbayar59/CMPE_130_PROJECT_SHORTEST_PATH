@@ -15,6 +15,7 @@ public:
 	void _LOAD_CITY_STRING_(string cityFileName);
 	void _EXPLORE_MATRIX_(int start_vertex);
 	void _PRINT_PATH_(int start_vertex, int end_vertex);
+	void _PRINT_LIST_OF_CITIES_ (string cityFileName);
 	void _SHOW_COST_();
 
 	int distance_matrix[cities][cities];
