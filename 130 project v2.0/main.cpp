@@ -17,7 +17,7 @@ int main()
 	int end_city = 0;
 	
 	
-	char filename[] = "input.txt";
+	string filename = "input.txt";
 	string city_name_string = "CITY.txt";
 	DB._LOAD_DATA_(filename);
 	DB._LOAD_CITY_STRING_(city_name_string);
