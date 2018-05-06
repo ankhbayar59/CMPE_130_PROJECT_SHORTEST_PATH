@@ -5,20 +5,24 @@ using namespace std;
 int main()
 {
 	dijkstra DB;
-	cout << "the start position: " << std::endl;
+	cout << "All Cities" << endl;
+	cout << "the start position: " << endl;
+	string city_name_string = "CITY.txt";
+	DB._PRINT_LIST_OF_CITIES_(city_name_string);
 	string start;
 	string end;
-	cin >> start;
+	getline(cin, start);
 	DB.start = start;
+	cout << "All Cities" << endl;
+	DB._PRINT_LIST_OF_CITIES_(city_name_string);
 	cout << "the end position: " << std::endl;
-	cin >> end;
+	getline(cin, end);
 	DB.end = end;
 	int start_city = 0;
 	int end_city = 0;
 	
 	
 	string filename = "input.txt";
-	string city_name_string = "CITY.txt";
 	DB._LOAD_DATA_(filename);
 	DB._LOAD_CITY_STRING_(city_name_string);
 
