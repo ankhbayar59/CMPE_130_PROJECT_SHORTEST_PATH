@@ -19,8 +19,6 @@ void dijkstra::_LOAD_DATA_(string fileName)
 	//based on the each city's distance to another city which read from file, 
 	//I put the distance (undriect graph it means that distance_matrix[i][j] = distance_matrix[j][i])
 	// to the distance_matrix (2d vector
-	// freopen(filename, "r", stdin);
-	int tempNum = 0;
 	string line; 
 	int city_start;
 	int city_end;
@@ -35,22 +33,10 @@ void dijkstra::_LOAD_DATA_(string fileName)
 	{
 		getline(inFile, line);
 		stringstream(line) >> city_start >> city_end >> weight;
-		tempNum++;
 		distance_matrix[city_start][city_end] = weight;
 		distance_matrix[city_end][city_start] = weight;
 		
 	}
-	line_number = tempNum;
-	/*
-	for (int i = 0; i <= line_number; i++)
-	{
-		std::cin >> city_start >> city_end >> weight;
-		distance_matrix[city_start][city_end] = weight;
-		distance_matrix[city_end][city_start] = weight;
-		
-	}
-	*/
-
 	//show the matrix to check whether it is correct
 	/*for (int i = 0; i <= city_number; i++)
 	{
@@ -141,10 +127,9 @@ void dijkstra::_PRINT_PATH_(int start_vertex, int end_vertex)
 void dijkstra::_LOAD_CITY_STRING_(string cityFileName)
 {
 	ifstream in;
-	in.open(fileName);
+	in.open(cityFileName);
 	string str;
 	string city;
-	string citySecond = "";
 	city_name_stream.push_back("dummy");
 	if (in.fail())
 	{
@@ -153,34 +138,57 @@ void dijkstra::_LOAD_CITY_STRING_(string cityFileName)
 	while(!in.eof())
 	{
 		getline(in, str);
-		stringstream(str) >> city >> citySecond;
-		if (citySecond == "")
+		for (int i = 0; str[i] != '\0'; i++)
 		{
-			city_name_stream.push_back(city);
+			if (str[i] >= 'A' && str[i] <= 'Z')
+			{
+				city = city + str[i];
+			}
+			else if(str[i] >= 'a' && str[i] <= 'z')
+			{
+				city = city + str[i];
+			}
+			else if(str[i] == ' ')
+			{
+				city = city + ' ';
+			}
 		}
-		else
-		{
-			city = city + " " + citySecond; 
-			city_name_stream.push_back(city);
-		}
+		city_name_stream.push_back(city);
 		city = "";
-		citySecond = "";
 	}
-	/*
+
+}
+void dijkstra::_PRINT_LIST_OF_CITIES_(string cityFileName)
+{
+	ifstream in;
+	in.open(cityFileName);
 	string str;
-	in.open(filename);
-	in >> str;
-	string city_name;
-	city_name_stream.push_back("dummy");
-	while (in)
+	string city;
+	if (in.fail())
 	{
-		stringstream(str) >> city_name;
-
-		city_name_stream.push_back(city_name);
-		in >> str;
+		cout << "Cannot find the file" << endl;
 	}
-	*/
-
+	while(!in.eof())
+	{
+		getline(in, str);
+		for (int i = 0; str[i] != '\0'; i++)
+		{
+			if (str[i] >= 'A' && str[i] <= 'Z')
+			{
+				city = city + str[i];
+			}
+			else if(str[i] >= 'a' && str[i] <= 'z')
+			{
+				city = city + str[i];
+			}
+			else if(str[i] == ' ')
+			{
+				city = city + ' ';
+			}
+		}
+		city = city + ", ";
+	}
+	cout << city << endl;
 }
 void dijkstra::_SHOW_COST_()
 {
